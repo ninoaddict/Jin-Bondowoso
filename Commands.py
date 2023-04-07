@@ -1,7 +1,8 @@
-NMAX = 10001
+import Util
 import Settings
+from Settings import NMAX
 
-# TODO: run procedure
+# TODO: run available commands
 def run(masukan : str) -> None:
     if masukan == "login":
         login(Settings.users, Settings.users_num)
@@ -9,6 +10,10 @@ def run(masukan : str) -> None:
         logout()
     elif masukan == "summonjin" and Settings.ID > -1 and Settings.users[Settings.ID][2] == "bandung_bondowoso":
         summonjin(Settings.users, Settings.users_num)
+    elif masukan == "hapusjin":
+        pass
+    elif masukan == "ubahjin":
+        ubahjin(Settings.users, Settings.users_num)
 
 # TODO: login to the system
 def login(users : list, N : int) -> None:
@@ -30,36 +35,15 @@ def logout() -> None:
     print("Berhasil logout!")
     Settings.ID = -1
 
-# TODO: return the number of jin in the users list
-def jin_num(users : list, N : int):
-    ans = 0 
-    for i in range(N):
-        if users[i][2] == "jin_pembangun" or users[i][2] == "jin_pengumpul":
-            ans += 1
-    return ans
-
-# TODO: check if the input username already exist in the users list
-def check_username(users : list, N : int, username : str) -> bool:
-    for i in range(N):
-        if users[i][0] == username:
-            return True
-    return False
-
-# TODO: return the length of the password
-def check_password(password : str) -> int:
-    ans = 0
-    while password[ans] != '\n':
-        ans += 1
-    return ans
-
 # TODO: summon jin 
-def summonjin(users : list, N : int):
+def summonjin(users : list, N : int) -> None:
     # number of jins validation
-    if jin_num(users, N) < 100:
+    if Util.jin_num(users, N) < 100:
         available_jin = ["jin_pengumpul", "jin_pembangun"]
         print("Jenis jin yang dapat dipanggil:")
         print(f" (1) Pengumpul - Bertugas mengumpulkan bahan bangunan")
         print(f" (2) Pembangun - Bertugas membangun candi \n")
+
         # jin option validation
         masukan = int(input("Masukkan nomor jenis jin yang ingin dipanggil: "))
         while masukan != 1 and masukan != 2:
@@ -69,25 +53,52 @@ def summonjin(users : list, N : int):
             print("\nMemilih jin “Pengumpul”.\n")
         else:
             print("\nMemilih jin “Pembangun”.\n")
+
         # username validation
         username = input("Masukkan username jin: ")
-        while check_username(users, N, username):
+        while Util.check_username(users, N, username, lambda s : True) != -1:
             print(f"\nUsername “{username} sudah diambil!”\n")
             username = input("Masukkan username jin: ")
+
         # password validation
         password = input("Masukkan password jin : ")
-        print(check_password(password + '\n'))
-        while(check_password(password + '\n') < 5 or check_password(password + "\n") > 25):
+        while(Util.check_password(password + '\n') < 5 or Util.check_password(password + "\n") > 25):
             print("\nPassword panjangnya harus 5-25 karakter!\n")
             password = input("Masukkan password jin : ")
         print("\nMengumpulkan sesajen...")
         print("Menyerahkan sesajen...")
         print("Membacakan mantra...\n")
         print(f"Jin {username} berhasil dipanggil!")
+
         # add jin to the users list
         Settings.users[N][0] = username
         Settings.users[N][1] = password
         Settings.users[N][2] = available_jin[masukan-1]
         Settings.users_num += 1
+
     else:
         print("Jumlah Jin telah maksimal! (100 jin). Bandung tidak dapat men-summon lebih dari itu")
+
+# TODO:
+def hapusjin():
+    pass
+
+# TODO: Change jin type
+def ubahjin(users : list, N : int):
+    username = input("Masukkan username jin: ")
+    jin_index = Util.check_username(users, N, username, lambda s : s == "jin_pengumpul" or s == "jin_pembangun")
+    if jin_index == -1:
+        print("\nTidak ada jin dengan username tersebut.")
+    else:
+        if users[jin_index][2] == "jin_pengumpul":
+            jin_type = "Pengumpul"
+            jin_type_change = "Pembangun"
+            type_change = "jin_pembangun"
+        else:
+            jin_type = "Pembangun"
+            jin_type_change = "Pengumpul"
+            type_change = "jin_pengumpul"
+        ans = input(f"Jin ini bertipe “{jin_type}”. Yakin ingin mengubah ke tipe “{jin_type_change}” (Y/N)?")
+        if ans == "Y":
+            users[jin_index][2] = type_change
+            print("\nJin telah berhasil diubah")
