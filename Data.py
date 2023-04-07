@@ -1,8 +1,11 @@
 import argparse
+import typing
 import Util
+import os
+import csv
 
 #TODO : Load Main File
-def load():
+def load() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("folder_name", help = "check the folder name", nargs = '?', default = "")
     args = parser.parse_args()
@@ -16,6 +19,20 @@ def load():
             print(f"Folder {args.folder_name} tidak ditemukan.")
         quit()
 
+#TODO : Membaca data dari csv file
+def readcsv(file : str, arr : list, num_elements : int) -> None:
+    f = open(file)
+    f_reader = csv.reader(f, delimiter = ';')
+    line_count = k = 0
+    for line in f_reader:
+        if line_count == 0:
+            line_count += 1
+            continue
+        for i in range(num_elements):
+            arr[k][i] = line[i]
+        k += 1
+    f.close()
+
 #TODO : Menyimpan File Data
-def save():
+def save() -> None:
     nama_folder = input("Masukkan nama folder : ")
