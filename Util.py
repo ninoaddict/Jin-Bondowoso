@@ -1,5 +1,5 @@
 from collections.abc import Callable
-from Settings import NMAX
+from Global import NMAX
 
 # TODO: return the length of a list
 def list_size(l : list) -> int:

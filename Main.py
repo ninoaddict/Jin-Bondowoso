@@ -1,5 +1,5 @@
 import Commands
-import Settings
+import Global
 import Util
 from Data import load
 from Data import readcsv
@@ -7,13 +7,13 @@ from Data import readcsv
 # MAIN PROGRAM
 # load main program and files
 load()
-readcsv("user.csv", Settings.users, 3)
-readcsv("candi.csv", Settings.candi, 5)
-readcsv("bahan_bangunan.csv", Settings.bahan_bangunan, 3)
+readcsv("user.csv", Global.users, 3)
+readcsv("candi.csv", Global.candi, 5)
+readcsv("bahan_bangunan.csv", Global.bahan_bangunan, 3)
 
 # find effective size of the global lists
-Settings.users_num = Util.list_size(Settings.users)
-Settings.candi_num = Util.list_size(Settings.candi)
+Global.users_num = Util.list_size(Global.users)
+Global.candi_num = Util.list_size(Global.candi)
 
 # run commands
 while True:
