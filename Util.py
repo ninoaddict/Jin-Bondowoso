@@ -31,3 +31,27 @@ def check_password(password : str) -> int:
     while password[ans] != '\n':
         ans += 1
     return ans
+
+# TODO: generate random number sequence
+rand = 7
+def lcg(a : int, b : int, m : int, bound : list) -> int:
+    global rand
+    rand = (a*rand + b) % m
+    while rand % (bound[1] + 1) < bound[0]:
+        rand = (a*rand + b) % m
+    return rand % (bound[1] + 1)
+
+# TODO: find lowest index
+def find_lowestidx(candi : list, N : int)-> int:
+    for i in range(N):
+        if candi[i][1] == 0 and candi[i][2] == 0 and candi[i][3] == 0 and candi[i][4] == 0:
+            return candi[i][0]
+    return N + 1
+
+# TODO: find the number of jin type
+def jin_count(users: list, jintype : str, N : int) -> int:
+    ans = 0
+    for i in range(N):
+        if users[i][2] == jintype:
+            ans += 1
+    return ans

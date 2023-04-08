@@ -1,5 +1,6 @@
 import argparse
 import typing
+from collections.abc import Callable
 import Util
 import os
 import csv
@@ -20,7 +21,7 @@ def load() -> None:
         quit()
 
 #TODO : Membaca data dari csv file
-def readcsv(file : str, arr : list, num_elements : int) -> None:
+def readcsv(file : str, arr : list, num_elements : int, func : Callable[[int], bool]) -> None:
     f = open(file)
     f_reader = csv.reader(f, delimiter = ';')
     line_count = k = 0
@@ -29,7 +30,10 @@ def readcsv(file : str, arr : list, num_elements : int) -> None:
             line_count += 1
             continue
         for i in range(num_elements):
-            arr[k][i] = line[i]
+            if func(i):
+                arr[k][i] = int(line[i])
+            else:
+                arr[k][i] = line[i]
         k += 1
     f.close()
 
