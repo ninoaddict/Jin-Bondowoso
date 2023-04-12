@@ -9,5 +9,3 @@ def lcg(lower_bound : int, upper_bound : int) -> int:
     while rand % (upper_bound + 1) < lower_bound:
         rand = (a*rand + b) % m
     return rand % (upper_bound + 1)
-for i in range(10):
-    print(lcg(0,5))
