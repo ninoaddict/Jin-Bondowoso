@@ -26,7 +26,6 @@ class array_of_type:
 
 # variable global
 ID = -1
-user = array_of_type([User(None,None,None) for i in range(1000)], 0)
-candi = array_of_type([Candi(None,None,None,None,None) for i in range(1000)], 0)
-bahan_bangunan = Bahan_Bangunan(None,None,None)
-candi_num = 0
+user = array_of_type([User(0,0,0) for i in range(1000)], 0)
+candi = array_of_type([Candi(0,0,0,0,0) for i in range(1000)], 0)
+bahan_bangunan = Bahan_Bangunan(0,0,0)
