@@ -1,5 +1,8 @@
 import Global
 from F13 import load
+from F14 import save
+from F15 import help
+from F16 import exit
 
 # MAIN PROGRAM
 # load main program and files
@@ -35,7 +38,7 @@ while True:
     elif masukan == "ayamberkokok":
         pass
     elif masukan == "save":
-        pass
+        save()
     elif masukan == "help":
         pass
     elif masukan == "exit":
