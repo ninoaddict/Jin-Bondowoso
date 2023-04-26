@@ -1,17 +1,17 @@
-from Global import Candi
+from Global import array_of_type
 
-def hancurkancandi (candi):
+# TODO : prosedur untuk menghancurkan candi
+def hancurkancandi (candi : array_of_type) -> None:
     idCandi = int(input("Masukkan ID candi : "))
     if candi.idx[idCandi-1].pasir == 0 :
-        print("Tidak ada candi dengan ID tersebut.")
+        print("\nTidak ada candi dengan ID tersebut.")
     else :
-        confirm = input("Apakah Anda yakin ingin menghancurkan candi ID: {idCandi} (Y/N)?  ")
+        confirm = input(f"Apakah Anda yakin ingin menghancurkan candi ID: {idCandi} (Y/N)?  ")
         if confirm == "Y"  :
-            print("Candi berhasil dihancurkan.")
+            print("\nCandi berhasil dihancurkan.")
             candi.idx[idCandi-1].username = 0
             candi.idx[idCandi-1].pasir = 0
             candi.idx[idCandi-1].batu = 0
             candi.idx[idCandi-1].air = 0
-        else : #confirm = N
+        else : # confirm = N
             print("Candi tidak dihancurkan.")
-
