@@ -26,15 +26,10 @@ def summonjin(user : array_of_type) -> None:
             username = input("Masukkan username jin: ")
         
         # validasi password
-        jumlahpassword=0
-        while True:
-            password=input('Masukkan password jin:')
-            while password[jumlahpassword:]:
-                jumlahpassword+=1
-            if jumlahpassword <5 and jumlahpassword >25:
-                print('Password panjangnya harus 5-25 karakter!')
-            else:
-                break
+        password = input("Masukkan password jin: ")
+        while len(password) < 5 or len(password) > 25:
+            print("\nPassword panjangnya harus 5-25 karakter!\n")
+            password = input("Masukkan password jin: ")
         print("\nMengumpulkan sesajen...")
         print("Menyerahkan sesajen...")
         print("Membacakan mantra...\n")

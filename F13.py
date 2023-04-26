@@ -69,6 +69,8 @@ def load_file(folder : str, file : str, obj : any) -> None:
                 elif k == 3:
                     obj.air = int(hasil[2])
         k += 1
-    if file == "candi.csv" or file == "user.csv":
+    if file == "user.csv":
         obj.Neff = k - 1
+    elif file == "candi.csv":
+        obj.Neff = j
     f.close()

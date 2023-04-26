@@ -1,7 +1,8 @@
-from Global import User, Candi, Bahan_Bangunan
+from Global import array_of_type, Bahan_Bangunan
 import copy
 
-def sort_candi(candi : list[Candi]):
+# TODO : fungsi untuk sort list candi
+def sort_candi(candi : array_of_type) -> None:
     for i in range(candi.Neff):
         for j in range(candi.Neff - i - 1):
             if str(candi.idx[j].username) > str(candi.idx[j + 1].username):
@@ -9,8 +10,8 @@ def sort_candi(candi : list[Candi]):
                 candi.idx[j] = candi.idx[j+1]
                 candi.idx[j+1] = temp
 
-# TODO : 
-def laporanjin(user : User, bahan_bangunan : Bahan_Bangunan, candi : Candi) -> None:
+# TODO : prosedur untuk menampilkan laporan jin
+def laporanjin(user : array_of_type, bahan_bangunan : Bahan_Bangunan, candi : array_of_type) -> None:
     jin_pembangun = jin_pengumpul = 0
     for i in range(user.Neff):
         if user.idx[i].role == "jin_pembangun":

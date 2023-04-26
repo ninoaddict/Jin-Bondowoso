@@ -1,4 +1,4 @@
-# TODO : 
+# TODO : prosedur yang menampilkan petunjuk commands yang bisa dilakukan oleh suatu role 
 def help(role : str) -> None:
     print("=========== HELP ===========")
     if role == 'belumlogin':

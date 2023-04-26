@@ -1,14 +1,14 @@
-from Global import User
-from Global import Candi
+from Global import array_of_type
 
-
-def cekusername(user : User, username : str) -> int:
-    for i, user in enumerate(user.Neff):
-        if user['username'] == username:
+# TODO : fungsi untuk mengembalikan indeks dari username dari list user
+def cekusername(user : array_of_type, username : str) -> int:
+    for i in range(user.Neff):
+        if user.idx[i].username == username:
             return i
     return 0
 
-def hapusjin(user : User, candi : Candi) -> None:
+# TODO : prosedur untuk menghapus jin
+def hapusjin(user : array_of_type, candi : array_of_type) -> None:
     username = input("Masukkan username jin: ")
     id = cekusername(user, username)
     if id == 0:
