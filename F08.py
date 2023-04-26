@@ -13,7 +13,7 @@ def jumlahjinpengumpul(user : array_of_type) -> int:
 # TODO : prosedur untuk batch kumpul
 def batchkumpul(bahan_bangunan: Bahan_Bangunan, user : array_of_type) -> None:
     banyakjinpengumpul = jumlahjinpengumpul(user)
-    pasir, batu, air = 0
+    pasir, batu, air = 0, 0, 0
     if banyakjinpengumpul > 0 :
         # mengumpulkan bahan dengan algoritma linear congruential generator
         for i in range (banyakjinpengumpul) :
@@ -40,7 +40,7 @@ def max(a : int, b : int) -> None:
         return b
 # TODO : fungsi untuk mencari banyak jumlah jin pembangun
 def jumlahjinpembangun (user : array_of_type) -> int:
-        total : int()
+        total = int()
         for i in range (user.Neff) :
             if user.idx[i].role == 'jin_pembangun' :
                 total += 1  
@@ -59,7 +59,7 @@ def total_candi (candi : array_of_type) -> int:
 def batchbangun(bahan_bangunan : Bahan_Bangunan, user : array_of_type, candi : array_of_type) -> None:
     banyakjinpembangun = jumlahjinpembangun(user)   
     if banyakjinpembangun > 0 :
-        pasir, batu, air = 0
+        pasir, batu, air = 0, 0, 0
         bahancandi = [[0 for i in range(3)] for j in range(banyakjinpembangun)]
         for i in range(banyakjinpembangun):
             bahancandi[i][0] = lcg(1,5)
@@ -76,7 +76,7 @@ def batchbangun(bahan_bangunan : Bahan_Bangunan, user : array_of_type, candi : a
             bahan_bangunan.pasir -= pasir
             bahan_bangunan.batu -= batu
             bahan_bangunan.air -= air
-            j, id = 0
+            j, id = 0, 0
             list_of_pembangun = [0 for i in range(banyakjinpembangun)]
             for i in range(user.Neff):
                 if user.idx[i].role == "jin_pembangun":

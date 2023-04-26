@@ -35,7 +35,7 @@ def bangun (pembangun : str, candi : array_of_type, bahan_bangunan : Bahan_Bangu
         
         else : 
             terkecil = cariindexterkecil(candi)
-            candi.idx[terkecil].id = id+1
+            candi.idx[terkecil].id =  terkecil + 1
             candi.idx[terkecil].username = pembangun
             candi.idx[terkecil].pasir = pasirbangun
             candi.idx[terkecil].batu = batubangun

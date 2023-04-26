@@ -1,4 +1,13 @@
 import Global
+from F01 import login
+from F02 import logout
+from F03 import summonjin
+# from F04 import hapusjin
+from F05 import ubahjin
+from F06 import bangun
+from F07 import kumpul
+from F08 import batchbangun, batchkumpul
+from F11 import hancurkancandi
 from F13 import load
 from F14 import save
 from F15 import help
@@ -11,35 +20,38 @@ load()
 # run commands
 while True:
     masukan = input(">>> ")
-    if masukan == "login":
-        pass
+    if masukan == "login" and Global.ID == -1:
+        login(Global.user)
     elif masukan == "logout":
+        logout()
+    elif masukan == "summonjin" and Global.ID != -1 and Global.user.idx[Global.ID].role == "bandung_bondowoso":
+        summonjin(Global.user)
+    elif masukan == "hapusjin" and Global.ID != -1 and Global.user.idx[Global.ID].role == "bandung_bondowoso":
         pass
-    elif masukan == "summonjin":
-        pass
-    elif masukan == "hapusjin":
-        pass
-    elif masukan == "ubahjin":
-        pass
-    elif masukan == "bangun":
-        pass
-    elif masukan == "kumpul":
-        pass
-    elif masukan == "batchkumpul":
-        pass
-    elif masukan == "batchbangun":
-        pass
+    elif masukan == "ubahjin" and Global.ID != -1 and Global.user.idx[Global.ID].role == "bandung_bondowoso":
+        ubahjin(Global.user)
+    elif masukan == "bangun" and Global.ID != -1 and Global.user.idx[Global.ID].role == "jin_pembangun":
+        bangun(Global.user.idx[Global.ID].username, Global.candi, Global.bahan_bangunan)
+    elif masukan == "kumpul" and Global.ID != -1 and Global.user.idx[Global.ID].role == "jin_pengumpul":
+        kumpul()
+    elif masukan == "batchkumpul" and Global.ID != -1 and Global.user.idx[Global.ID].role == "bandung_bondowoso":
+        batchkumpul(Global.bahan_bangunan, Global.user)
+    elif masukan == "batchbangun" and Global.ID != -1 and Global.user.idx[Global.ID].role == "bandung_bondowoso":
+        batchbangun(Global.bahan_bangunan, Global.user, Global.candi)
     elif masukan == "laporanjin":
         pass
     elif masukan == "laporancandi":
         pass
-    elif masukan == "hancurkancandi":
-        pass
+    elif masukan == "hancurkancandi" and Global.ID != -1 and Global.user.idx[Global.ID].role == "roro_jonggrang":
+        hancurkancandi(Global.candi)
     elif masukan == "ayamberkokok":
         pass
     elif masukan == "save":
-        save()
+        save(Global.user, Global.candi, Global.bahan_bangunan)
     elif masukan == "help":
-        pass
+        if Global.ID == -1:
+            help("belumlogin")
+        else:
+            help(Global.user.idx[Global.ID].role)
     elif masukan == "exit":
-        pass
+        exit()
