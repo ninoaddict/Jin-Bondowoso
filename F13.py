@@ -2,18 +2,18 @@ import argparse
 import os
 import Global
 
-# TODO : load main file
+# TODO : prosedur untuk load file utama
 def load() -> None:
-    # initialize argument
-    parser = argparse.ArgumentParser()
+    # inisialisasi argumen
+    parser = argparse.ArgumentParser(usage="python main.py <nama_folder>")
     parser.add_argument("folder_name", help = "check the folder name", nargs = '?', default = '')
     args = parser.parse_args()
-    # save folder name
+    # simpan nama folder
     folder = args.folder_name
-    # check folder name
+    # cek nama folder
     if folder == "":
         print("\nTidak ada nama folder yang diberikan!")
-        print("\nUsage: python main.py <nama_folder>")
+        parser.print_usage()
         quit()
     elif os.path.isdir("./save/" + folder):
         print("\nLoading...\n")
@@ -26,7 +26,7 @@ def load() -> None:
         print(f"\nFolder {folder} tidak ditemukan.")
         quit()
 
-# TODO : 
+# TODO : fungsi untuk mengubah suatu string menjadi list berdasarkan delimiter yang diberikan
 def string_parser(s : str, delimiter : str) -> list:
     temp_res = [0 for i in range(1000)]
     temp = ""
@@ -40,8 +40,8 @@ def string_parser(s : str, delimiter : str) -> list:
             temp += s[i]
     return [temp_res[i] for i in range(idx)]
 
-# TODO : load csv file
-def load_file(folder : str, file : str, obj) -> None:
+# TODO : prosedur untuk load data user, candi, dan bahan dari csv file yang tersedia
+def load_file(folder : str, file : str, obj : any) -> None:
     f = open('./save/' + folder + '/' + file)
     k = j = 0
     for line in f:
