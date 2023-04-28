@@ -18,7 +18,7 @@ from F16 import exit
 
 # MAIN PROGRAM
 # load main program and files
-load()
+load(Global.user, Global.candi, Global.bahan_bangunan)
 
 # run commands
 while True:
@@ -36,7 +36,7 @@ while True:
     elif masukan == "bangun" and Global.ID != -1 and Global.user.idx[Global.ID].role == "jin_pembangun":
         bangun(Global.user.idx[Global.ID].username, Global.candi, Global.bahan_bangunan)
     elif masukan == "kumpul" and Global.ID != -1 and Global.user.idx[Global.ID].role == "jin_pengumpul":
-        kumpul()
+        kumpul(Global.bahan_bangunan)
     elif masukan == "batchkumpul" and Global.ID != -1 and Global.user.idx[Global.ID].role == "bandung_bondowoso":
         batchkumpul(Global.bahan_bangunan, Global.user)
     elif masukan == "batchbangun" and Global.ID != -1 and Global.user.idx[Global.ID].role == "bandung_bondowoso":
@@ -57,4 +57,4 @@ while True:
         else:
             help(Global.user.idx[Global.ID].role)
     elif masukan == "exit":
-        exit()
+        exit(Global.user, Global.candi, Global.bahan_bangunan)

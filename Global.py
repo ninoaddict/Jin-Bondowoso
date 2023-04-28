@@ -19,13 +19,18 @@ class Bahan_Bangunan:
         self.batu = batu
         self.air = air
 
-class array_of_type:
-    def __init__(self, arr : list, Neff : int) -> None:
+class list_of_user:
+    def __init__(self, arr : list[User], Neff : int) -> None:
+        self.idx = arr
+        self.Neff = Neff
+
+class list_of_candi:
+    def __init__(self, arr : list[Candi], Neff : int) -> None:
         self.idx = arr
         self.Neff = Neff
 
 # variable global
 ID = -1
-user = array_of_type([User(0,0,0) for i in range(1000)], 0)
-candi = array_of_type([Candi(0,0,0,0,0) for i in range(1000)], 0)
+user = list_of_user([User(0,0,0) for i in range(1000)], 0)
+candi = list_of_candi([Candi(0,0,0,0,0) for i in range(1000)], 0)
 bahan_bangunan = Bahan_Bangunan(0,0,0)
