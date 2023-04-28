@@ -1,5 +1,5 @@
 from Global import Bahan_Bangunan, list_of_candi, list_of_user
-import copy
+
 
 # TODO : fungsi untuk sort list candi
 def sort_candi(candi : list_of_candi) -> None:
@@ -18,7 +18,7 @@ def laporanjin(user : list_of_user, bahan_bangunan : Bahan_Bangunan, candi : lis
             jin_pembangun += 1
         elif user.idx[i].role == "jin_pengumpul":
             jin_pengumpul += 1
-    temp_candi = copy.deepcopy(candi)
+    temp_candi = candi.copy()
     sort_candi(temp_candi)
     jin_terajin = "-"
     jin_termalas = "-"

@@ -45,3 +45,4 @@ def bangun (pembangun : str, candi : list_of_candi, bahan_bangunan : Bahan_Bangu
                 candi.Neff += 1
             print("Candi berhasil dibangun.")
             print(f"Sisa candi yang perlu dibangun: {100 - (jumlah + 1)}")
+   
