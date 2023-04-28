@@ -23,7 +23,7 @@ load(Global.user, Global.candi, Global.bahan_bangunan)
 # run commands
 while True:
     masukan = input(">>> ")
-    if masukan == "login" and Global.ID == -1:
+    if masukan == "login":
         login(Global.user)
     elif masukan == "logout":
         logout()

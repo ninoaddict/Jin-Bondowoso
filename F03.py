@@ -8,7 +8,7 @@ def username_idx(user : list_of_user, username : str) -> None:
 
 # TODO : prosedur untuk summon jin
 def summonjin(user : list_of_user) -> None:
-    if user.Neff < 103:
+    if user.Neff < 102:
         print("Jenis jin yang dapat dipanggil:")
         print(f" (1) Pengumpul - Bertugas mengumpulkan bahan bangunan")
         print(f" (2) Pembangun - Bertugas membangun candi \n")
@@ -45,3 +45,5 @@ def summonjin(user : list_of_user) -> None:
         user.idx[N].password = password
         user.idx[N].role = type_jin
         user.Neff += 1
+    else:
+        print("Jumlah Jin telah maksimal! (100 jin). Bandung tidak dapat men-summon lebih dari itu")

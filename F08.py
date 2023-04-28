@@ -33,7 +33,7 @@ def batchkumpul(bahan_bangunan: Bahan_Bangunan, user : list_of_user) -> None:
 
 # BATCH BANGUN
 # TODO : fungsi untuk mengembalikan nilai maksimum dari 2 bilangan
-def max(a : int, b : int) -> None:
+def max(a : int, b : int) -> int:
     if a > b :
         return a
     else:
