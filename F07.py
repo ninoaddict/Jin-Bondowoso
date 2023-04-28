@@ -4,9 +4,9 @@ from Global import Bahan_Bangunan
 # TODO : prosedur untuk mengumpulkan bahan-bahan bangunan untuk membuat candi
 def kumpul(bahan_bangunan : Bahan_Bangunan) -> None:
     # mengumpulkan bahan dengan algoritma linear congruential generator
-    pasirkumpul = lcg(1,5)
-    batukumpul = lcg(1,5)
-    airkumpul = lcg(1,5)
+    pasirkumpul = lcg(0,5)
+    batukumpul = lcg(0,5)
+    airkumpul = lcg(0,5)
     # menyimpan hasil pengumpulan ke dalam variable global bahan bangunan 
     bahan_bangunan.pasir += pasirkumpul
     bahan_bangunan.batu += batukumpul
