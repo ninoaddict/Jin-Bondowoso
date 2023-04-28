@@ -12,7 +12,7 @@ class Candi:
         self.pasir = pasir
         self.batu = batu
         self.air = air
-    def copy(self) -> Candi :
+    def copy(self):
         return Candi(self.id,self.username,self.pasir,self.batu,self.air)
       
 
@@ -31,7 +31,7 @@ class list_of_candi:
     def __init__(self, arr : list[Candi], Neff : int) -> None:
         self.idx = arr
         self.Neff = Neff
-    def copy(self)->list_of_candi:
+    def copy(self):
         return list_of_candi([candi.copy() for candi in self.idx],self.Neff)
         
         
