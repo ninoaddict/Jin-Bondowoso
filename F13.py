@@ -5,7 +5,7 @@ from Global import list_of_candi, list_of_user, Bahan_Bangunan
 # TODO : prosedur untuk load file utama
 def load(user : list_of_user, candi : list_of_candi, bahan_bangunan : Bahan_Bangunan) -> None:
     # inisialisasi argumen
-    parser = argparse.ArgumentParser(usage="python main.py <nama_folder>")
+    parser = argparse.ArgumentParser(usage = "python main.py <nama_folder>")
     parser.add_argument("folder_name", help = "check the folder name", nargs = '?', default = '')
     args = parser.parse_args()
     # simpan nama folder
