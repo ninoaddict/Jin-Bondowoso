@@ -1,8 +1,8 @@
 from B01 import lcg
-from Global import bahan_bangunan
+from Global import Bahan_Bangunan
 
 # TODO : prosedur untuk mengumpulkan bahan-bahan bangunan untuk membuat candi
-def kumpul() -> None:
+def kumpul(bahan_bangunan : Bahan_Bangunan) -> None:
     # mengumpulkan bahan dengan algoritma linear congruential generator
     pasirkumpul = lcg(1,5)
     batukumpul = lcg(1,5)

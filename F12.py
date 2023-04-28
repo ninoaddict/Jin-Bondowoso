@@ -1,7 +1,7 @@
-from Global import array_of_type
+from Global import list_of_candi
 
 # TODO : fungsi yang mengembalikan banyak candi yang sudah dibangun
-def berapa_banyak_candi (candi : array_of_type)-> int :
+def berapa_banyak_candi (candi : list_of_candi)-> int :
     total = 0
     for i in range (candi.Neff):
         if candi.idx[i].pasir != 0 and candi.idx[i].batu != 0 and candi.idx[i].air != 0:
@@ -9,7 +9,7 @@ def berapa_banyak_candi (candi : array_of_type)-> int :
     return total
 
 # TODO : prosedur yang menjalankan command ayam berkokok
-def ayamberkokok (candi : array_of_type) -> None:
+def ayamberkokok (candi : list_of_candi) -> None:
     banyak_candi = berapa_banyak_candi (candi)
     print("Kukuruyuk.. Kukuruyuk..")
     print(f"\nJumlah Candi : {banyak_candi}  ")

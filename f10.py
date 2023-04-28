@@ -1,7 +1,7 @@
-from Global import Candi, Bahan_Bangunan
+from Global import list_of_candi
 
 # TODO : prosedur untuk menampilkan laporan candi
-def laporancandi(candi : Candi) -> None:
+def laporancandi(candi : list_of_candi) -> None:
     banyak_candi = pasir = batu = air = 0
     min_price = 200000
     max_price = 0

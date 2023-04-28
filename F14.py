@@ -1,8 +1,8 @@
-from Global import User, Candi, Bahan_Bangunan
+from Global import list_of_candi, list_of_user, Bahan_Bangunan
 import os
 
 # TODO : prosedur untuk menyimpan data user, candi, dan bahan bangunan ke file csv
-def save(user : User, candi : Candi, bahan_bangunan : Bahan_Bangunan) -> None:
+def save(user : list_of_user, candi : list_of_candi, bahan_bangunan : Bahan_Bangunan) -> None:
     # cek dan buat directory jika tidak ada
     folder = input("Masukkan nama folder: ")
     print('\nSaving...')

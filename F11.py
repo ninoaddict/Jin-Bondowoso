@@ -1,7 +1,7 @@
-from Global import array_of_type
+from Global import list_of_candi
 
 # TODO : prosedur untuk menghancurkan candi
-def hancurkancandi (candi : array_of_type) -> None:
+def hancurkancandi (candi : list_of_candi) -> None:
     idCandi = int(input("Masukkan ID candi : "))
     if candi.idx[idCandi-1].pasir == 0 :
         print("\nTidak ada candi dengan ID tersebut.")

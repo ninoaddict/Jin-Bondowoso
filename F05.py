@@ -1,14 +1,14 @@
-from Global import array_of_type
+from Global import list_of_user
 
 # TODO : fungsi untuk mengetahui index dari suatu username pada list user
-def cekusername(user : array_of_type, username) -> int:
+def cekusername(user : list_of_user, username) -> int:
     for i in range (user.Neff) :
         if user.idx[i].username == username :
             return i
     return -1
 
 # TODO : prosedur untuk mengubah jin
-def ubahjin (user : array_of_type) -> None: 
+def ubahjin (user : list_of_user) -> None: 
     ubah = str()
     namajin = input('Masukkan username jin: ')
     id = cekusername (user, namajin)

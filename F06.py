@@ -1,8 +1,8 @@
 from B01 import lcg
-from Global import array_of_type, Bahan_Bangunan
+from Global import list_of_candi, Bahan_Bangunan
 
 # TODO : fungsi untuk mencari banyak candi yang sudah dibangun
-def total_candi (candi : array_of_type) -> int: 
+def total_candi (candi : list_of_candi) -> int: 
     total = int()
     for i in range (candi.Neff) :
         if candi.idx[i] :
@@ -11,14 +11,14 @@ def total_candi (candi : array_of_type) -> int:
     return total
 
 # TODO : fungsi untuk mencari indeks terkecil candi yang kosong atau belum dibangun
-def cariindexterkecil (candi : array_of_type) -> int:
+def cariindexterkecil (candi : list_of_candi) -> int:
     for i in range (candi.Neff) :
         if candi.idx[i].pasir == 0 or candi.idx[i].batu == 0 or candi.idx[i].air == 0 :
             return i
     return candi.Neff
 
 # TODO : prosedur untuk membangun candi
-def bangun (pembangun : str, candi : array_of_type, bahan_bangunan : Bahan_Bangunan ) -> None:
+def bangun (pembangun : str, candi : list_of_candi, bahan_bangunan : Bahan_Bangunan ) -> None:
     pasirbangun = lcg(1,5)
     batubangun = lcg(1,5)
     airbangun = lcg(1,5)

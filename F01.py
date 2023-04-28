@@ -1,8 +1,8 @@
 import Global
-from Global import array_of_type
+from Global import list_of_user
 
 # TODO : prosedur untuk login ke dalam sistem
-def login (user : array_of_type) -> None:
+def login (user : list_of_user) -> None:
     if Global.ID != -1:
         print("Login gagal!")
         print(f"Anda telah login dengan username, {user.idx[Global.ID].username}, silahkan lakukan logout sebelum melakukan login kembali" )

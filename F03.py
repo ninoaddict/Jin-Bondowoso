@@ -1,13 +1,13 @@
-from Global import array_of_type
+from Global import list_of_user
 # TODO : fungsi yang mengembalikan index dari tipe data bentukan User dari username
-def username_idx(user : array_of_type, username : str) -> None:
+def username_idx(user : list_of_user, username : str) -> None:
     for i in range(user.Neff):
         if user.idx[i].username == username:
             return i
     return -1
 
 # TODO : prosedur untuk summon jin
-def summonjin(user : array_of_type) -> None:
+def summonjin(user : list_of_user) -> None:
     if user.Neff < 103:
         print("Jenis jin yang dapat dipanggil:")
         print(f" (1) Pengumpul - Bertugas mengumpulkan bahan bangunan")

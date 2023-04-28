@@ -1,9 +1,9 @@
-from Global import Bahan_Bangunan, array_of_type
+from Global import Bahan_Bangunan, list_of_user, list_of_candi
 from B01 import lcg
 
 # BATCH KUMPUL
 # TODO : fungsi untuk mencari banyak jin pengumpul
-def jumlahjinpengumpul(user : array_of_type) -> int:
+def jumlahjinpengumpul(user : list_of_user) -> int:
     total = int()
     for i in range (user.Neff) :
         if user.idx[i].role == 'jin_pengumpul' :
@@ -11,7 +11,7 @@ def jumlahjinpengumpul(user : array_of_type) -> int:
     return total
 
 # TODO : prosedur untuk batch kumpul
-def batchkumpul(bahan_bangunan: Bahan_Bangunan, user : array_of_type) -> None:
+def batchkumpul(bahan_bangunan: Bahan_Bangunan, user : list_of_user) -> None:
     banyakjinpengumpul = jumlahjinpengumpul(user)
     pasir, batu, air = 0, 0, 0
     if banyakjinpengumpul > 0 :
@@ -39,7 +39,7 @@ def max(a : int, b : int) -> None:
     else:
         return b
 # TODO : fungsi untuk mencari banyak jumlah jin pembangun
-def jumlahjinpembangun (user : array_of_type) -> int:
+def jumlahjinpembangun (user : list_of_user) -> int:
         total = int()
         for i in range (user.Neff) :
             if user.idx[i].role == 'jin_pembangun' :
@@ -47,7 +47,7 @@ def jumlahjinpembangun (user : array_of_type) -> int:
         return total
 
 # TODO : fungsi untuk mencari banyak candi saat ini
-def total_candi (candi : array_of_type) -> int: 
+def total_candi (candi : list_of_candi) -> int: 
     total = int()
     for i in range (candi.Neff) :
         if candi.idx[i] :
@@ -56,7 +56,7 @@ def total_candi (candi : array_of_type) -> int:
     return total
 
 # TODO : prosedur untuk melakukan batchbangun
-def batchbangun(bahan_bangunan : Bahan_Bangunan, user : array_of_type, candi : array_of_type) -> None:
+def batchbangun(bahan_bangunan : Bahan_Bangunan, user : list_of_user, candi : list_of_candi) -> None:
     banyakjinpembangun = jumlahjinpembangun(user)   
     if banyakjinpembangun > 0 :
         pasir, batu, air = 0, 0, 0
