@@ -12,6 +12,9 @@ class Candi:
         self.pasir = pasir
         self.batu = batu
         self.air = air
+    def copy(self) -> Candi :
+        return Candi(self.id,self.username,self.pasir,self.batu,self.air)
+      
 
 class Bahan_Bangunan:
     def __init__(self, pasir : int, batu : int, air : int) -> None:
@@ -28,6 +31,10 @@ class list_of_candi:
     def __init__(self, arr : list[Candi], Neff : int) -> None:
         self.idx = arr
         self.Neff = Neff
+    def copy(self)->list_of_candi:
+        return list_of_candi([candi.copy() for candi in self.idx],self.Neff)
+        
+        
 
 # variable global
 ID = -1
