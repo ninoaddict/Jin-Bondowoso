@@ -24,7 +24,7 @@ def laporanjin(user : list_of_user, bahan_bangunan : Bahan_Bangunan, candi : lis
                 jin_terajin = user.idx[i].username
             if temp < min_candi or (temp == min_candi and user.idx[i].username > jin_termalas):
                 min_candi = temp
-                jin_termalas = candi.idx[j].username
+                jin_termalas = user.idx[i].username
     
     print(f"\n> Total Jin: {jin_pembangun + jin_pengumpul}")
     print(f"> Total Jin Pengumpul: {jin_pengumpul}")
