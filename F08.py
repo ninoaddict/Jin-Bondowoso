@@ -69,7 +69,7 @@ def batchbangun(bahan_bangunan : Bahan_Bangunan, user : list_of_user, candi : li
             batu += bahancandi[i][1]
             air += bahancandi[i][2]
             
-        print(f'Mengerahkan {banyakjinpembangun} jin untuk membangun candi dengan total bahan {pasir} pasir, {batu} batu, {air} air.') 
+        print(f'Mengerahkan {banyakjinpembangun} jin untuk membangun candi dengan total bahan {pasir} pasir, {batu} batu, dan {air} air.') 
         if bahan_bangunan.pasir >= pasir and bahan_bangunan.batu >= batu and bahan_bangunan.air >= air:
             print(f"Jin berhasil membangun total {banyakjinpembangun} candi.")
             jumlah = total_candi(candi)
