@@ -4,7 +4,7 @@ from B01 import lcg
 # BATCH KUMPUL
 # TODO : fungsi untuk mencari banyak jin pengumpul
 def jumlahjinpengumpul(user : list_of_user) -> int:
-    total = int()
+    total = 0
     for i in range (user.Neff) :
         if user.idx[i].role == 'jin_pengumpul' :
             total += 1
@@ -17,9 +17,9 @@ def batchkumpul(bahan_bangunan: Bahan_Bangunan, user : list_of_user) -> None:
     if banyakjinpengumpul > 0 :
         # mengumpulkan bahan dengan algoritma linear congruential generator
         for i in range (banyakjinpengumpul) :
-            pasir += lcg(1,5)
-            batu += lcg(1,5)
-            air += lcg(1,5)
+            pasir += lcg(0,5)
+            batu += lcg(0,5)
+            air += lcg(0,5)
 
         bahan_bangunan.pasir += pasir
         bahan_bangunan.batu += batu
@@ -40,7 +40,7 @@ def max(a : int, b : int) -> int:
         return b
 # TODO : fungsi untuk mencari banyak jumlah jin pembangun
 def jumlahjinpembangun (user : list_of_user) -> int:
-        total = int()
+        total = 0
         for i in range (user.Neff) :
             if user.idx[i].role == 'jin_pembangun' :
                 total += 1  
@@ -48,7 +48,7 @@ def jumlahjinpembangun (user : list_of_user) -> int:
 
 # TODO : fungsi untuk mencari banyak candi saat ini
 def total_candi (candi : list_of_candi) -> int: 
-    total = int()
+    total = 0
     for i in range (candi.Neff) :
         if candi.idx[i] :
             if candi.idx[i].pasir != 0 or candi.idx[i].batu != 0 or candi.idx[i].air != 0 :

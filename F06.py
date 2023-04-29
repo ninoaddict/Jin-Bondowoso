@@ -3,7 +3,7 @@ from Global import list_of_candi, Bahan_Bangunan
 
 # TODO : fungsi untuk mencari banyak candi yang sudah dibangun
 def total_candi (candi : list_of_candi) -> int: 
-    total = int()
+    total = 0
     for i in range (candi.Neff) :
         if candi.idx[i] :
             if candi.idx[i].pasir != 0 or candi.idx[i].batu != 0 or candi.idx[i].air != 0 :

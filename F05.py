@@ -9,7 +9,7 @@ def cekusername(user : list_of_user, username) -> int:
 
 # TODO : prosedur untuk mengubah jin
 def ubahjin (user : list_of_user) -> None: 
-    ubah = str()
+    ubah = ""
     namajin = input('Masukkan username jin: ')
     id = cekusername (user, namajin)
     if id != -1 :
