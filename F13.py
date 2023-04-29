@@ -15,11 +15,18 @@ def load(user : list_of_user, candi : list_of_candi, bahan_bangunan : Bahan_Bang
         print("\nTidak ada nama folder yang diberikan!")
         parser.print_usage()
         quit()
-    elif os.path.isdir("./save/" + folder):
-        print("\nLoading...\n")
+    elif folder == "Initialization": # folder yang menyimpan data saat program pertama kali dijalankan
+        print('\nLoading...\n')
         load_user(folder, "user.csv", user)
         load_candi(folder, "candi.csv", candi)
         load_bahan(folder, "bahan_bangunan.csv", bahan_bangunan)
+        print("Selamat datang di program “Manajerial Candi”")
+        print("Silahkan masukkan username Anda")
+    elif os.path.isdir("./save/" + folder):
+        print("\nLoading...\n")
+        load_user("save/" + folder, "user.csv", user)
+        load_candi("save/" + folder, "candi.csv", candi)
+        load_bahan("save/" + folder, "bahan_bangunan.csv", bahan_bangunan)
         print("Selamat datang di program “Manajerial Candi”")
         print("Silahkan masukkan username Anda")
     else:
@@ -42,7 +49,7 @@ def string_parser(s : str, delimiter : str) -> list:
 
 # TODO : prosedur untuk load data user
 def load_user(folder : str, file : str, user : list_of_user) -> None:
-    f = open('./save/' + folder + '/' + file)
+    f = open(folder + '/' + file)
     k = 0
     for line in f:
         if k > 0:
@@ -56,7 +63,7 @@ def load_user(folder : str, file : str, user : list_of_user) -> None:
 
 # TODO : prosedur untuk load data candi
 def load_candi(folder : str, file : str, candi : list_of_candi) -> None:
-    f = open('./save/' + folder + '/' + file)
+    f = open(folder + '/' + file)
     k = j = 0
     for line in f:
         if k > 0:
@@ -76,7 +83,7 @@ def load_candi(folder : str, file : str, candi : list_of_candi) -> None:
 
 # TODO : prosedur untuk load data bahan bangunan
 def load_bahan(folder : str, file : str, bahan_bangunan : Bahan_Bangunan) -> None:
-    f = open('./save/' + folder + '/' + file)
+    f = open(folder + '/' + file)
     k = 0
     for line in f:
         hasil = string_parser(line, ';')
