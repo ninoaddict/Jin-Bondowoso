@@ -1,6 +1,6 @@
 from Global import list_of_user
 # TODO : fungsi yang mengembalikan index dari tipe data bentukan User dari username
-def username_idx(user : list_of_user, username : str) -> None:
+def username_idx(user : list_of_user, username : str) -> int:
     for i in range(user.Neff):
         if user.idx[i].username == username:
             return i

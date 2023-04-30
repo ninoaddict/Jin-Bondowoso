@@ -14,7 +14,7 @@ def hapusjin(user : list_of_user, candi : list_of_candi) -> None:
     if id == 0:
         print("\nTidak ada jin dengan username tersebut.")
     else:
-        konfirmasi = input("Apakah anda yakin ingin menghapus jin dengan username Jin1 (Y/N)? ")
+        konfirmasi = input(f"Apakah anda yakin ingin menghapus jin dengan username {username} (Y/N)? ")
         if konfirmasi == "Y":
             for i in range(candi.Neff):
                 if candi.idx[i].username == username:
