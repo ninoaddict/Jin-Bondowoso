@@ -43,7 +43,7 @@ def save(user : list_of_user, candi : list_of_candi, bahan_bangunan : Bahan_Bang
     # tulis data bahan bangunan ke file csv
     file = open(temp_folder + '/' + "bahan_bangunan.csv", "w")
     file.write("nama;deskripsi;jumlah\n")
-    file.write("pasir;pasir adalah benda;" + str(bahan_bangunan.pasir) + '\n')
-    file.write("batu;batu adalah rock;" + str(bahan_bangunan.batu) + '\n')
-    file.write("air;air adalah sumber kehidupan"+ ';' + str(bahan_bangunan.air) + '\n')
+    file.write("pasir;Pasir adalah material butiran yang terdiri dari partikel batuan dan mineral yang terpecah halus.;" + str(bahan_bangunan.pasir) + '\n')
+    file.write("batu;Batu adalah material padat dan keras yang terdiri dari satu atau lebih mineral. Batu terbentuk melalui proses alamiah seperti pembekuan magma, pelapukan dan pengendapan mineral, atau proses sedimentasi.;" + str(bahan_bangunan.batu) + '\n')
+    file.write("air;Air adalah senyawa kimia yang terdiri dari dua atom hidrogen (H) dan satu atom oksigen (O), dengan rumus kimia H2O. Air merupakan zat cair yang paling umum ditemukan di Bumi dan menjadi esensial bagi kehidupan."+ ';' + str(bahan_bangunan.air) + '\n')
     file.close()

@@ -8,7 +8,7 @@ from F06 import bangun
 from F07 import kumpul
 from F08 import batchbangun, batchkumpul
 from F09 import laporanjin
-from f10 import laporancandi
+from F10 import laporancandi
 from F11 import hancurkancandi
 from F12 import ayamberkokok
 from F13 import load
@@ -21,6 +21,7 @@ load(Global.user, Global.candi, Global.bahan_bangunan)
 
 # menjalankan program utama dan commands
 # Nilai ID (-1) menandakan bahwa belum ada user yang login ke dalam program
+# asumsi : jika pengguna memasukkan command yang tidak terdefinisi maupun command yang tidak punya akses, maka tidak ada output/keluaran apapun
 selesai = False
 while not selesai:
     masukan = input(">>> ")
