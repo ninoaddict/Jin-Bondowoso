@@ -1,7 +1,7 @@
 from Global import list_of_user
 
 # TODO : fungsi untuk mengetahui index dari suatu username pada list user
-def cekusername(user : list_of_user, username) -> int:
+def cekusername(user : list_of_user, username : str) -> int:
     for i in range (user.Neff) :
         # jika username terdaftar, return nilai index dari username tersebut
         if user.idx[i].username == username :
