@@ -3,14 +3,15 @@ import os
 
 # TODO : prosedur untuk menyimpan data user, candi, dan bahan bangunan ke file csv
 def save(user : list_of_user, candi : list_of_candi, bahan_bangunan : Bahan_Bangunan) -> None:
-    # cek dan buat directory jika tidak ada
     folder = input("Masukkan nama folder: ")
     print('\nSaving...')
+    # cek dan buat directory parent folder jika tidak ada
     if not os.path.isdir("save"):
         os.mkdir("save")
         print(f"\nMembuat folder save...")
     temp_folder = 'save'
     temp_file = ''
+    # cek dan buat directory folder yang dimasukkan jika tidak ada
     for i in range(len(folder)):
         if folder[i] == '/' or i == len(folder) - 1:
             if i == len(folder) - 1:
@@ -34,6 +35,7 @@ def save(user : list_of_user, candi : list_of_candi, bahan_bangunan : Bahan_Bang
     file = open(temp_folder + '/' + "candi.csv", "w")
     file.write("id;pembuat;pasir;batu;air\n")
     for i in range(candi.Neff):
+        # tulis data candi yang tidak 'kosong' ke dalam file csv
         if candi.idx[i].pasir != 0 and candi.idx[i].batu != 0:
             file.write(str(candi.idx[i].id) + ';' + str(candi.idx[i].username) + ';' + str(candi.idx[i].pasir) + ';' + str(candi.idx[i].batu) + ';' + str(candi.idx[i].air) + '\n')
     file.close()

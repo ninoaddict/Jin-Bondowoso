@@ -1,5 +1,5 @@
 from time import time
-rand = int(time())
+rand = int(time()*1000)
 def lcg(lower_bound : int, upper_bound : int) -> int:
     a = 1583458089
     b = 1132489760

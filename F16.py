@@ -6,6 +6,6 @@ def exit(user : list_of_user, candi : list_of_candi, bahan_bangunan : Bahan_Bang
     konfirmasi = input("Apakah Anda mau melakukan penyimpanan file yang sudah diubah? (y/n) ")
     while konfirmasi != 'Y' and konfirmasi != 'N' and konfirmasi != 'y' and konfirmasi != 'n':
         konfirmasi = input("Apakah Anda mau melakukan penyimpanan file yang sudah diubah? (y/n) ")
+    # jika ingin menyimpan data pada program, panggil fungsi save
     if konfirmasi == "Y" or konfirmasi == 'y':
         save(user, candi, bahan_bangunan)
-    quit()
