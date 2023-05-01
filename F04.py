@@ -5,13 +5,13 @@ def cekusername(user : list_of_user, username : str) -> int:
     for i in range(user.Neff):
         if user.idx[i].username == username:
             return i
-    return 0
+    return -1
 
 # TODO : prosedur untuk menghapus jin
 def hapusjin(user : list_of_user, candi : list_of_candi) -> None:
     username = input("Masukkan username jin: ")
     id = cekusername(user, username)
-    if id == 0:
+    if id == -1:
         print("\nTidak ada jin dengan username tersebut.")
     else:
         konfirmasi = input(f"Apakah anda yakin ingin menghapus jin dengan username {username} (Y/N)? ")

@@ -5,8 +5,8 @@ def laporancandi(candi : list_of_candi) -> None:
     banyak_candi = pasir = batu = air = 0
     min_price = 200000
     max_price = 0
-    id_termahal = "-"
-    id_termurah = "-"
+    id_termahal = -1
+    id_termurah = -1
     for i in range(candi.Neff):
         if candi.idx[i].pasir != 0 and candi.idx[i].batu != 0 and candi.idx[i].air != 0:
             banyak_candi += 1
@@ -24,7 +24,7 @@ def laporancandi(candi : list_of_candi) -> None:
     print(f"> Total Pasir yang digunakan: {pasir}")
     print(f"> Total Batu yang digunakan: {batu}")
     print(f"> Total Air yang digunakan: {air}")
-    if id_termahal == '-':
+    if id_termahal == -1:
         print(f"> ID Candi Termahal : -")
         print(f"> ID Candi Termurah : -")
     else:

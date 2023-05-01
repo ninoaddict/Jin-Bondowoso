@@ -8,7 +8,7 @@ def save(user : list_of_user, candi : list_of_candi, bahan_bangunan : Bahan_Bang
     print('\nSaving...')
     if not os.path.isdir("save"):
         os.mkdir("save")
-        print(f"\n Membuat folder save...")
+        print(f"\nMembuat folder save...")
     temp_folder = 'save'
     temp_file = ''
     for i in range(len(folder)):
@@ -18,7 +18,7 @@ def save(user : list_of_user, candi : list_of_candi, bahan_bangunan : Bahan_Bang
             temp_folder = temp_folder + '/' + temp_file
             if not os.path.isdir(temp_folder):
                 os.mkdir(temp_folder)
-                print(f"\n Membuat folder {temp_folder}...")
+                print(f"\nMembuat folder {temp_folder}...")
             temp_file = ""
         else:
             temp_file += folder[i]

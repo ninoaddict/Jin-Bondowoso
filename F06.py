@@ -5,9 +5,8 @@ from Global import list_of_candi, Bahan_Bangunan
 def total_candi (candi : list_of_candi) -> int: 
     total = 0
     for i in range (candi.Neff) :
-        if candi.idx[i] :
-            if candi.idx[i].pasir != 0 or candi.idx[i].batu != 0 or candi.idx[i].air != 0 :
-                total += 1 
+        if candi.idx[i].pasir != 0 and candi.idx[i].batu != 0 and candi.idx[i].air != 0 :
+            total += 1 
     return total
 
 # TODO : fungsi untuk mencari indeks terkecil candi yang kosong atau belum dibangun

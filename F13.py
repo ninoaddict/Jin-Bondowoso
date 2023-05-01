@@ -24,9 +24,10 @@ def load(user : list_of_user, candi : list_of_candi, bahan_bangunan : Bahan_Bang
         print("Silahkan masukkan username Anda")
     elif os.path.isdir("./save/" + folder):
         print("\nLoading...\n")
-        load_user("save/" + folder, "user.csv", user)
-        load_candi("save/" + folder, "candi.csv", candi)
-        load_bahan("save/" + folder, "bahan_bangunan.csv", bahan_bangunan)
+        folder = "save/" + folder
+        load_user(folder, "user.csv", user)
+        load_candi(folder, "candi.csv", candi)
+        load_bahan(folder, "bahan_bangunan.csv", bahan_bangunan)
         print("Selamat datang di program “Manajerial Candi”")
         print("Silahkan masukkan username Anda")
     else:
